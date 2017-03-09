@@ -1,14 +1,42 @@
 # SublimeWrapper
-Sublime Wrapper is a sublime plugin which can wrap seleted content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`.
+**Sublime Wrapper** is a sublime plugin which can wrap seleted content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`, highly inspired by PHPStorm's built-in surround feature.
 
 # Installation
 
-## Package Control
+* ### Package Control(recommended)
+    * To be continued
 
-## Manual Installation
+* ### Manual Installation
+    * Using Git
+        1. Open terminal and change the path to Sublime `Packages` directory.(`Preferences > Browse Packages`).
+        2. Run `git clone https://github.com/lattespirit/SublimeWrapper.git`.
+        3. Done.
+
+    * Using zip File
+        1. Click the `Preferences > Browse Packages…` menu.
+        2. Download the [Package](https://github.com/lattespirit/SublimeWrapper/archive/master.zip) file. Unzip and place the whole folder to the path methoned in Step One.
+        3. Rename the folder to `SublimeWrapper`.
+        4. Done.
+
+# Configuration
+* **SublimeWrapper** will map `"super/ctrl+k, super/ctrl+s"`(`"super"` means `Command` key in OSX) to trigger the command as default. If this key binding conflicts with the one in your environment, emap it to your favorite one without hesitation.
+```json
+[
+    {
+        "keys": ["super/ctrl+k", "super/ctrl+s"], "command": "activate_wrap"
+    }
+]
+```
 
 # Usage
+* **Wrap Single Line** Place the cursor in a single line(**except end of line**), or select contents in the same line, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
+* **Wrap Multiple Lines** Select contents in multiple lines, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
+    * **Notice: See Known Issuses below**
+* **INFO:** When next_fields defined in the wrapper like **if/else**, press `tab` and jump to the next field. FYI, jumping to prev fields is NOT supported.
 
 # Known Issues
+ * Trigger the key binding when the single cursor at the end of the line, an indent will be placed at the wrong line.
+ * When `Vintage Mode` is enabled and selete a whole line or multiple lines in `Visual Mode`, trigger the key binding and wrap the seleted contents. Then the whole view contents will be screwed up. Kind of nightmare.
 
 # Contributing
+* To be continued
