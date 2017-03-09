@@ -1,0 +1,5 @@
+[
+	{
+		"keys": ["ctrl+k", "ctrl+s"], "command": "activate_wrap"
+	}
+]

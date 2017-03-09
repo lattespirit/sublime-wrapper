@@ -1,0 +1,11 @@
+[
+	{
+		"keys": ["tab"], "command": "move_caret",
+		"context":
+		[
+			{
+				"key": "setting.wrapper_activated", "operator": "equal", "operand": true
+			}
+		]
+	}
+]

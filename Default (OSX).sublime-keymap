@@ -1,0 +1,5 @@
+[
+	{
+		"keys": ["super+k", "super+s"], "command": "activate_wrap"
+	}
+]
