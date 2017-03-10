@@ -1,6 +1,8 @@
 # SublimeWrapper
 **Sublime Wrapper** is a sublime plugin which can wrap seleted content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`, `JSON`, highly inspired by PHPStorm's built-in surround feature.
 
+![SublimeWrapper](http://i.imgur.com/JPk5P6m.gif)
+
 # Installation
 
 * ### Package Control(recommended)
@@ -29,8 +31,8 @@
 ```
 
 # Usage
-* **Wrap Single Line** Place the cursor in a single line(**except end of line**), or select contents in the same line, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
-* **Wrap Multiple Lines** Select contents in multiple lines, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
+* **Wrap Single Line:** Place the cursor in a single line(**except end of line**), or select contents in the same line, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
+* **Wrap Multiple Lines:** Select contents in multiple lines, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
     * **Notice: See Known Issuses below**
 * **INFO:** When next_fields defined in the wrapper like **if/else**, press `tab` and jump to the next field. FYI, jumping to prev fields is NOT supported.
 
