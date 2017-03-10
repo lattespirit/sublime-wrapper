@@ -1,5 +1,5 @@
 # SublimeWrapper
-**Sublime Wrapper** is a sublime plugin which can wrap seleted content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`, `JSON`, highly inspired by PHPStorm's built-in surround feature.
+**Sublime Wrapper** is a sublime plugin which can wrap selected content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`, `JSON`, highly inspired by PHPStorm's built-in surround feature.
 
 ![SublimeWrapper](http://i.imgur.com/JPk5P6m.gif)
 
@@ -38,7 +38,7 @@
 
 # Known Issues
  * Trigger the key binding when the single cursor at the end of the line, an indent will be placed at the wrong line.
- * When `Vintage Mode` is enabled and selete a whole line or multiple lines in `Visual Mode`, trigger the key binding and wrap the seleted contents. Then the whole view contents will be screwed up. Kind of nightmare.
+ * When `Vintage Mode` is enabled and select a whole line or multiple lines in `Visual Mode`, trigger the key binding and wrap the selected contents. Then the whole view contents will be screwed up. Kind of nightmare.
 
 # Contributing
 * To be continued
