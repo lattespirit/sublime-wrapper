@@ -1,5 +1,5 @@
 # SublimeWrapper
-**Sublime Wrapper** is a sublime plugin which can wrap seleted content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`, highly inspired by PHPStorm's built-in surround feature.
+**Sublime Wrapper** is a sublime plugin which can wrap seleted content with specific code like `if`, `if/else`, `for`, etc. Supporting syntax includes `PHP`, `Python`, `Javascript`, `JSON`, highly inspired by PHPStorm's built-in surround feature.
 
 # Installation
 
@@ -8,15 +8,15 @@
 
 * ### Manual Installation
     * Using Git
-        1. Open terminal and change the path to Sublime `Packages` directory.(`Preferences > Browse Packages`).
-        2. Run `git clone https://github.com/lattespirit/SublimeWrapper.git`.
-        3. Done.
+        * Open terminal and change the path to Sublime `Packages` directory.(`Preferences > Browse Packages`).
+        * Run `git clone https://github.com/lattespirit/SublimeWrapper.git`.
+        * Done.
 
     * Using zip File
-        1. Click the `Preferences > Browse Packages…` menu.
-        2. Download the [Package](https://github.com/lattespirit/SublimeWrapper/archive/master.zip) file. Unzip and place the whole folder to the path methoned in Step One.
-        3. Rename the folder to `SublimeWrapper`.
-        4. Done.
+        * Click the `Preferences > Browse Packages…` menu.
+        * Download the [Package](https://github.com/lattespirit/SublimeWrapper/archive/master.zip) file. Unzip and place the whole folder to the path methoned in Step One.
+        * Rename the folder to `SublimeWrapper`.
+        * Done.
 
 # Configuration
 * **SublimeWrapper** will map `"super/ctrl+k, super/ctrl+s"`(`"super"` means `Command` key in OSX) to trigger the command as default. If this key binding conflicts with the one in your environment, emap it to your favorite one without hesitation.

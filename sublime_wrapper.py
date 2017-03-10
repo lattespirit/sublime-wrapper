@@ -70,6 +70,21 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                         [['while ${1}:'], ['']],
                         [['def ${1}():'], ['']]
                     ]
+                ],
+                [
+                    'Packages/JavaScript/JSON.sublime-syntax',
+                    [
+                        ['[ ]', 'Wrap with Array'],
+                        ['[ ],', 'Wrap with Array and comma'],
+                        ['{ }', 'Wrap with Object'],
+                        ['{ },', 'Wrap with Object and comma']
+                    ],
+                    [
+                        [['['], [']']],
+                        [['['], ['],']],
+                        [['{'], ['}']],
+                        [['{'], ['},']],
+                    ]
                 ]
         ]
 
