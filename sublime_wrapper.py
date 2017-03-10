@@ -186,6 +186,8 @@ class WrapCommand(sublime_plugin.TextCommand):
             if ALL_POS_ROW_COLS:
                 self.activate_wrapper()
                 self.view.run_command('move_caret')
+            else:
+                self.unactivate_wrapper()
 
     def activate_wrapper(self):
         prefs = sublime.load_settings('Preferences.sublime-settings')
@@ -214,11 +216,14 @@ class MoveCaretCommand(sublime_plugin.TextCommand):
 class CheckWrapperStatus(sublime_plugin.EventListener):
     def on_selection_modified(self, view):
         global ALL_POS_ROW_COLS
-        # Activate wrapper setting when defined positions remains in this global list
-        if ALL_POS_ROW_COLS:
-            self.activate_wrapper()
-        else:
-            self.unactivate_wrapper()
+        prefs = sublime.load_settings('Preferences.sublime-settings')
+        is_wrapper_activated = prefs.get('wrapper_activated')
+        if is_wrapper_activated == True:
+            # Activate wrapper setting when defined positions remains in this global list
+            if ALL_POS_ROW_COLS:
+                self.activate_wrapper()
+            else:
+                self.unactivate_wrapper()
 
     def activate_wrapper(self):
         prefs = sublime.load_settings('Preferences.sublime-settings')
