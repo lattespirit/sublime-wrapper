@@ -17,7 +17,7 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                         ['foreach', 'Wrap with foreach() {} block'],
                         ['try / catch', 'Wrap with TryCatch'],
                         ['public function', 'Wrap with Public Function'],
-                        ['protect function', 'Wrap with Protected Function'],
+                        ['protected function', 'Wrap with Protected Function'],
                         ['private function', 'Wrap with Private Function']
                     ],
                     [
@@ -29,7 +29,7 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                         [['foreach (${1}) {'], ['}']],
                         [['try {'], ['} catch (${2}) {', '\t${1}', '}']],
                         [['public function ${1}()', '{'], ['}']],
-                        [['protect function ${1}()', '{'], ['}']],
+                        [['protected function ${1}()', '{'], ['}']],
                         [['private function ${1}()', '{'], ['}']]
                     ]
                 ],
@@ -56,14 +56,16 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     'Packages/Python/Python.sublime-syntax',
                     [
                         ['if', 'Wrap with if condition'],
-                        ['if / else', 'Wrap with if {} else {} block'],
-                        ['for', 'Wrap with for() {} block'],
-                        ['while', 'Wrap with while{} block'],
-                        ['function', 'Wrap with Function']
+                        ['if / else', 'Wrap with if : else : block'],
+                        ['if / elif', 'Wrap with if : elif : block'],
+                        ['for', 'Wrap with for : block'],
+                        ['while', 'Wrap with while : block'],
+                        ['def', 'Wrap with dev function']
                     ],
                     [
                         [['if ${1}:'], ['']],
                         [['if ${1}:'], ['else:', '\t${2}']],
+                        [['if ${1}:'], ['elif:', '\t${2}']],
                         [['for ${1}:'], ['']],
                         [['while ${1}:'], ['']],
                         [['def ${1}():'], ['']]
@@ -167,12 +169,8 @@ class WrapCommand(sublime_plugin.TextCommand):
                     self.view.replace(edit, order_defined_region, '')
 
             if ALL_POS_ROW_COLS:
-                if len(ALL_POS_ROW_COLS) > 1:
-                    self.activate_wrapper()
-                    self.view.run_command('move_caret')
-                else:
-                    self.activate_wrapper()
-                    self.view.run_command('move_caret')
+                self.activate_wrapper()
+                self.view.run_command('move_caret')
 
     def activate_wrapper(self):
         prefs = sublime.load_settings('Preferences.sublime-settings')
