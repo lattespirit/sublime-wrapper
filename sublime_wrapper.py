@@ -11,7 +11,6 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     [
                         ['if', 'Wrap with if condition'],
                         ['if / else', 'Wrap with if {} else {} block'],
-                        ['{ }', 'Wrap with CurlyBrace'],
                         ['while', 'Wrap with while{} block'],
                         ['for', 'Wrap with for() {} block'],
                         ['foreach', 'Wrap with foreach() {} block'],
@@ -23,7 +22,6 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     [
                         [['if (${1}) {'], ['}']],
                         [['if (${1}) {'], ['} else {', '\t${2}', '}']],
-                        [['{'], ['}']],
                         [['while (${1}) {'], ['}']],
                         [['for (${1}) {'], ['}']],
                         [['foreach (${1}) {'], ['}']],
@@ -120,7 +118,10 @@ class WrapCommand(sublime_plugin.TextCommand):
         # Store all the selected regions
         BODY_REGIONS = []
         for region in self.view.sel():
-            BODY_REGIONS.append(sublime.Region(region.begin(), region.end()))
+            if region.empty():
+                BODY_REGIONS.append(self.view.line(region.begin()))
+            else:
+                BODY_REGIONS.append(sublime.Region(region.begin(), region.end()))
             self.view.add_regions('BODY_REGIONS', BODY_REGIONS, 'mark', 'dot', sublime.HIDDEN | sublime.PERSISTENT)
         for r in self.view.sel():
             region = self.view.line(r)
