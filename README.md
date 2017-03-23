@@ -31,13 +31,12 @@
 ```
 
 # Usage
-* **Wrap Single Line:** Place the cursor in a single line(**except end of line**), or select contents in the same line, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
+* **Wrap Single Line:** Place the cursor in a single line, or select contents in the same line, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
 * **Wrap Multiple Lines:** Select contents in multiple lines, then trigger the keymap metioned above, select the prefer item displayed in the popup panel, and press enter.
     * **Notice: See Known Issuses below**
 * **INFO:** When next_fields defined in the wrapper like **if/else**, press `tab` and jump to the next field. FYI, jumping to prev fields is NOT supported.
 
 # Known Issues
- * <del>Trigger the key binding when the single cursor at the end of the line, an indent will be placed at the wrong line.</del>(**solved**)
  * When `Vintage Mode` is enabled and select a whole line or multiple lines in `Visual Mode`, trigger the key binding and wrap the selected contents. Then the whole view contents will be screwed up. Kind of nightmare.
 
 # Contributing
