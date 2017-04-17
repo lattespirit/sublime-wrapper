@@ -6,7 +6,10 @@
 # Installation
 
 * ### Package Control(recommended)
-    * To be continued
+    * Press `Cmd/Ctrl + Shift + P` to open command palette
+    * Type `Package Control: Install Package` and press enter
+    * Type `Wrapper` and press enter
+    * Done
 
 * ### Manual Installation
     * Using Git

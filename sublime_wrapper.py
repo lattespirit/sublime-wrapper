@@ -7,7 +7,7 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
 
     WRAPPERS = [
                 [
-                    'Packages/PHP/PHP.sublime-syntax',
+                    ['Packages/PHP/PHP.sublime-syntax'],
                     [
                         ['if', 'Wrap with if condition'],
                         ['if / else', 'Wrap with if {} else {} block'],
@@ -32,7 +32,10 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     ]
                 ],
                 [
-                    'Packages/JavaScript/JavaScript.sublime-syntax',
+                    [
+                        'Packages/JavaScript/JavaScript.sublime-syntax',
+                        'Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage'
+                    ],
                     [
                         ['if', 'Wrap with if condition'],
                         ['if / else', 'Wrap with if {} else {} block'],
@@ -51,7 +54,11 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     ]
                 ],
                 [
-                    'Packages/Python/Python.sublime-syntax',
+                    [
+                        'Packages/Python/Python.sublime-syntax',
+                        'Packages/Python 3/Python3.tmLanguage',
+                        'Packages/Python Improved/PythonImproved.tmLanguage'
+                    ],
                     [
                         ['if', 'Wrap with if condition'],
                         ['if / else', 'Wrap with if : else : block'],
@@ -70,7 +77,7 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     ]
                 ],
                 [
-                    'Packages/JavaScript/JSON.sublime-syntax',
+                    ['Packages/JavaScript/JSON.sublime-syntax'],
                     [
                         ['[ ]', 'Wrap with Array'],
                         ['[ ],', 'Wrap with Array and comma'],
@@ -99,9 +106,11 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
 
     def detect_wrapper(self):
         for wrapper in self.WRAPPERS:
-            if wrapper[0] == self.window.active_view().settings().get('syntax'):
-                self.CHOSEN_WRAPPERS = wrapper
-                return True
+            syntaxes = wrapper[0]
+            for syntax in syntaxes:
+                if syntax == self.window.active_view().settings().get('syntax'):
+                    self.CHOSEN_WRAPPERS = wrapper
+                    return True
         return False
 
     def on_done(self, index):
