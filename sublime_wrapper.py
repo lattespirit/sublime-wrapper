@@ -29,6 +29,7 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                         [['public function ${1}()', '{'], ['}']],
                         [['protected function ${1}()', '{'], ['}']],
                         [['private function ${1}()', '{'], ['}']]
+
                     ]
                 ],
                 [
@@ -57,7 +58,8 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                     [
                         'Packages/Python/Python.sublime-syntax',
                         'Packages/Python 3/Python3.tmLanguage',
-                        'Packages/Python Improved/PythonImproved.tmLanguage'
+                        'Packages/Python Improved/PythonImproved.tmLanguage',
+                        'Packages/MagicPython/grammars/MagicPython.tmLanguage'
                     ],
                     [
                         ['if', 'Wrap with if condition'],
@@ -65,7 +67,9 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                         ['if / elif', 'Wrap with if : elif : block'],
                         ['for', 'Wrap with for : block'],
                         ['while', 'Wrap with while : block'],
-                        ['def', 'Wrap with dev function']
+                        ['def', 'Wrap with dev function'],
+                        ['try / except', 'Wrap with try : except : block'],
+                        ['with', 'Wrap with with : block'],
                     ],
                     [
                         [['if ${1}:'], ['']],
@@ -73,7 +77,9 @@ class ActivateWrapCommand(sublime_plugin.WindowCommand):
                         [['if ${1}:'], ['elif:', '\t${2}']],
                         [['for ${1}:'], ['']],
                         [['while ${1}:'], ['']],
-                        [['def ${1}():'], ['']]
+                        [['def ${1}():'], ['']],
+                        [['try:'], ['except Exception as e:', '\t${1}']],
+                        [['with open(${1}) as f:'], ['']],
                     ]
                 ],
                 [
