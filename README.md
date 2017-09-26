@@ -5,12 +5,6 @@
 
 # Installation
 
-* ### Package Control(recommended)
-    * Press `Cmd/Ctrl + Shift + P` to open command palette
-    * Type `Package Control: Install Package` and press enter
-    * Type `Wrapper` and press enter
-    * Done
-
 * ### Manual Installation
     * Using Git
         * Open terminal and change the path to Sublime `Packages` directory.(`Preferences > Browse Packages`).
