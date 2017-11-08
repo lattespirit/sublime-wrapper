@@ -8,12 +8,12 @@
 * ### Manual Installation
     * Using Git
         * Open terminal and change the path to Sublime `Packages` directory.(`Preferences > Browse Packages`).
-        * Run `git clone https://github.com/lattespirit/SublimeWrapper.git`.
+        * Run `git clone https://github.com/lattespirit/sublime-wrapper.git`.
         * Done.
 
     * Using zip File
         * Click the `Preferences > Browse Packages…` menu.
-        * Download the [Package](https://github.com/lattespirit/SublimeWrapper/archive/master.zip) file. Unzip and place the whole folder to the path methoned in Step One.
+        * Download the [Package](https://github.com/lattespirit/sublime-wrapper/archive/master.zip) file. Unzip and place the whole folder to the path methoned in Step One.
         * Rename the folder to `SublimeWrapper`.
         * Done.
 
